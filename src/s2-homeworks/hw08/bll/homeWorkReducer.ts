@@ -10,12 +10,18 @@ export const homeWorkReducer = (state: Array<UserType>, action: ActionType): Arr
             let stateCopy = [...state];
             if (action.payload === 'up') {
                 stateCopy.sort(function (a, b) {
-                    return a.age - b.age
+                    if (a.name.toLowerCase() > b.name.toLowerCase()) {
+                        return -1
+                    }
+                    return 0
                 })
             }
             if (action.payload === 'down') {
                 stateCopy.sort(function (a, b) {
-                    return b.age - a.age
+                    if (a.name.toLowerCase() < b.name.toLowerCase()) {
+                        return 1
+                    }
+                    return 0
                 })
             }
             return stateCopy
