@@ -8,12 +8,12 @@ export const homeWorkReducer = (state: Array<UserType>, action: ActionType): Arr
     switch (action.type) {
         case 'sort': { // by name
             let stateCopy = [...state];
-            // stateCopy.sort((a, b) => {
-            //     if (a.name > b.name) return 1
-            //     else if (a.name < b.name) return -1
-            //     else return 0
-            // })
-            if (action.payload === 'up') {
+            stateCopy.sort((a, b) => {
+                if (a.name > b.name) return 1
+                else if (a.name < b.name) return -1
+                else return 0
+            })
+/*            if (action.payload === 'up') {
                 stateCopy.sort((a, b) => {
                     if (a.name > b.name) return  1
                     return 0
@@ -25,7 +25,8 @@ export const homeWorkReducer = (state: Array<UserType>, action: ActionType): Arr
                     return 0
                 })
             }
-            return stateCopy // need to fix
+            return stateCopy // need to fix*/
+            return stateCopy
         }
         case 'check': {
 
