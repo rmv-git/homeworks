@@ -26,7 +26,7 @@ export const homeWorkReducer = (state: Array<UserType>, action: ActionType): Arr
                 })
             }
             return stateCopy // need to fix*/
-            return stateCopy
+            return action.payload === 'up' ? stateCopy : stateCopy.reverse()
         }
         case 'check': {
 
