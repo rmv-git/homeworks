@@ -43,9 +43,9 @@ function Clock() {
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     // const stringDay = 'date->day' || <br/> // пишут студенты
-    const stringDay = date.toDateString().slice(0, 3) || <br/> // пишут студенты
+    const stringDay = date.toDateString().slice(0, 3).replace('Wed', 'Wednesday') || <br/> // пишут студенты
     // const stringMonth = 'date->month' || <br/> // пишут студенты
-    const stringMonth = date.toDateString().slice(3, 7) || <br/> // пишут студенты
+    const stringMonth = date.toDateString().slice(4, 7) || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
