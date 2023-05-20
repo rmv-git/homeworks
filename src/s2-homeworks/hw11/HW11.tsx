@@ -18,12 +18,12 @@ function HW11() {
     const change = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
         const sliderValue = Array.isArray(value) ? value[0] : value;
-        if (Number(value)) {
-            setValue1(sliderValue)
+        if (!sliderValue) {
+            setValue1(value as number)
         }
-        if (Array.isArray(value)) {
-            setValue1(sliderValue)
-            setValue2(sliderValue)
+        if (sliderValue) {
+            setValue1(value as number)
+            setValue2(value as number)
         }
     }
 
