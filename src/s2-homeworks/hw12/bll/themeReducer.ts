@@ -2,7 +2,7 @@
 export type InitialStateType = {
     themeId: number
 }
-export const initState = {
+const initState = {
     themeId: 1,
 }
 
