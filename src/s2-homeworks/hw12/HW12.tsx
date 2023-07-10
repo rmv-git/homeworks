@@ -29,7 +29,7 @@ const HW12 = () => {
     }
 
     useEffect(() => {
-        document.documentElement.dataset.theme = themeId + ''
+        document.documentElement.dataset.theme = +themeId + ''
     }, [themeId])
 
     return (
@@ -43,7 +43,7 @@ const HW12 = () => {
                     id={'hw12-select-theme'}
                     className={s.select}
                     options={themes}
-                    onChangeOption={(e) => change(+e)}
+                    onChangeOption={(e) => change(e)}
                     // сделать переключение тем
                 />
             </div>
