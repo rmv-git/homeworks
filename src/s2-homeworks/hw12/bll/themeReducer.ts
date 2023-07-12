@@ -1,7 +1,7 @@
 type InitialStateType = {
     themeId: number
 }
-const initState = {
+const initState: InitialStateType = {
     themeId: 1,
 }
 

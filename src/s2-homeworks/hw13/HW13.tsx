@@ -36,12 +36,24 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText(res.data.errorText)
                 // дописать
 
             })
             .catch((e) => {
+                if (e.response.status === 500) {
+                    setCode('Код 500!')
+                    setImage(error500)
+                }
+                if (e.response.status === 400) {
+                    setCode('Код 400!')
+                    setImage(error400)
+                }
+                if (e.response.data === undefined) {
+                    setCode('Network Error')
+                    setImage(errorUnknown)
+                }
                 // дописать
-
             })
     }
 
