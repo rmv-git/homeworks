@@ -34,6 +34,7 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                console.log(res)
                 setCode('Код 200!')
                 setImage(success200)
                 setText(res.data.errorText)
@@ -41,17 +42,20 @@ const HW13 = () => {
 
             })
             .catch((e) => {
-                if (e.response.status === 500) {
+                if (e.code === 'ERR_BAD_RESPONSE') {
                     setCode('Код 500!')
                     setImage(error500)
+                    setText(e.message)
                 }
-                if (e.response.status === 400) {
+                if (e.code === 'ERR_BAD_REQUEST') {
                     setCode('Код 400!')
                     setImage(error400)
+                    setText(e.message)
                 }
-                if (e.response.data === undefined) {
-                    setCode('Network Error')
+                if (e.code === 'ERR_NETWORK') {
+                    setCode('ERR_NETWORK')
                     setImage(errorUnknown)
+                    setText(e.message)
                 }
                 // дописать
             })
