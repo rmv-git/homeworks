@@ -35,7 +35,7 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                console.log(res)
                 // сохранить пришедшие данные
 
                 //
@@ -45,6 +45,8 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
+        setTechs([value])
+        setSearchParams(`https://samurai.it-incubator.io/api/3.0/homework/${value}`)
 
         // добавить/заменить значение в квери урла
         // setSearchParams(
